@@ -1,0 +1,140 @@
+# ============================================================
+# UnityOrders Messages (English)
+# Version: ${version}
+# MiniMessage format: https://docs.advntr.dev/minimessage/format.html
+# ============================================================
+
+prefix: "<gradient:#3498db:#2ecc71><bold>UnityOrders</bold></gradient> <gray>»</gray> "
+
+# ------------------------------------------------------------
+# General
+# ------------------------------------------------------------
+general:
+  no-permission: "<red>You don't have permission to do that."
+  player-only: "<red>This command can only be used by players."
+  console-only: "<red>This command can only be used from the console."
+  unknown-command: "<red>Unknown command. Use <gold>/order</gold> to open the marketplace."
+  reload-success: "<green>Configuration reloaded successfully."
+  reload-failed: "<red>Failed to reload configuration. Check console for errors."
+  feature-disabled: "<red>This feature is currently disabled."
+
+# ------------------------------------------------------------
+# Economy
+# ------------------------------------------------------------
+economy:
+  insufficient-funds: "<red>You don't have enough money. You need <gold>$%total%</gold> but only have <gold>$%balance%</gold>."
+  payment-received: "<green>You received <gold>$%amount%</gold> for delivering <yellow>%amount_delivered%x %item%</yellow>."
+  payment-sent: "<green>Payment of <gold>$%amount%</gold> sent to <yellow>%player%</yellow>."
+  reserved: "<green>$%total% has been reserved for this order."
+  refunded: "<green>$%amount% has been refunded to your account."
+  tax-collected: "<gray>Tax of <gold>$%tax%</gold> (<yellow>%percent%%</yellow>) was collected."
+  economy-error: "<red>An economy error occurred. Please contact an administrator."
+  economy-not-found: "<red>Vault economy not found! Please install an economy plugin."
+
+# ------------------------------------------------------------
+# Orders
+# ------------------------------------------------------------
+orders:
+  created: "<green>Order created successfully! <gray>Buying <yellow>%amount%x %item%</yellow> for <gold>$%price%</gold> each."
+  cancelled: "<green>Order cancelled. <gray>$%amount% refunded."
+  completed: "<green>Order completed! All items have been delivered."
+  expired: "<yellow>Your order for %amount%x %item% has expired. <gray>$%amount% refunded."
+  not-found: "<red>Order not found."
+  limit-reached: "<red>You have reached the maximum active orders (<yellow>%limit%</yellow>)."
+  already-exists: "<red>You already have an active order for this item with the same enchantments."
+  invalid-amount: "<red>Invalid amount. Must be between 1 and %max%."
+  invalid-price: "<red>Invalid price. Must be at least $%min%."
+  price-too-high: "<red>Price too high. Maximum is $%max%."
+  item-blacklisted: "<red>This item is blacklisted and cannot be ordered."
+  no-active-orders: "<gray>You have no active orders."
+  no-orders-found: "<gray>No orders found."
+  editing-not-allowed: "<red>This order cannot be edited."
+  cancel-not-allowed: "<red>This order cannot be cancelled."
+  expired-cannot-deliver: "<red>This order has expired and cannot receive deliveries."
+  completed-cannot-deliver: "<red>This order has already been completed."
+
+# ------------------------------------------------------------
+# Delivery
+# ------------------------------------------------------------
+delivery:
+  invalid-item: "<red>The item you're trying to deliver doesn't match the order."
+  invalid-enchantment: "<red>The item doesn't have the required enchantments."
+  missing-enchantment: "<red>Missing enchantment: <yellow>%enchantment% %level%</yellow>."
+  wrong-enchantment-level: "<red>Enchantment %enchantment% must be level %required% but is %actual%."
+  extra-enchantment: "<red>This item has extra enchantments not requested in the order."
+  invalid-amount: "<red>You don't have enough items. Need <yellow>%needed%</yellow> but only have <yellow>%have%.</yellow>"
+  success: "<green>Successfully delivered <yellow>%amount%x %item%</yellow> for <gold>$%payment%</gold>."
+  partial-success: "<green>Delivered <yellow>%delivered%x %item%</yellow>. <gray>Remaining: <yellow>%remaining%x</yellow>."
+  no-matching-items: "<red>You don't have any items matching this order."
+  sell-all-success: "<green>Sold <yellow>%amount%x %item%</yellow> for <gold>$%total%</gold>."
+  confirm: "<yellow>Click confirm to deliver <gold>%amount%x %item%</gold> for <gold>$%payment%</gold>."
+  confirmed: "<green>Delivery confirmed!"
+  cancelled: "<red>Delivery cancelled."
+
+# ------------------------------------------------------------
+# Collection
+# ------------------------------------------------------------
+collect:
+  items-collected: "<green>Collected <yellow>%amount%x %item%</yellow> from your order."
+  inventory-full: "<red>Your inventory is full! Make space and try again."
+  no-items: "<gray>No items to collect."
+
+# ------------------------------------------------------------
+# Enchantments
+# ------------------------------------------------------------
+enchantments:
+  max-reached: "<red>Maximum enchantments reached (<yellow>%max%</yellow>)."
+  blacklisted: "<red>Enchantment <yellow>%enchantment%</yellow> is blacklisted."
+  curse-not-allowed: "<red>Curse enchantments are not allowed."
+  treasure-not-allowed: "<red>Treasure enchantments are not allowed."
+  added: "<green>Added enchantment: <yellow>%enchantment% %level%</yellow>."
+  removed: "<green>Removed enchantment: <yellow>%enchantment%</yellow>."
+
+# ------------------------------------------------------------
+# GUI
+# ------------------------------------------------------------
+gui:
+  page: "<gray>Page <yellow>%current%</yellow>/<yellow>%total%</yellow>"
+  search-prompt: "<gray>Click to search for items..."
+  search-results: "<gray>Search results for: <yellow>%query%</yellow>"
+  no-results: "<red>No results found."
+  click-to-create: "<gray>Click to create an order for this item."
+  click-to-deliver: "<gray>Click to deliver items to this order."
+  click-to-collect: "<gray>Click to collect your purchased items."
+  click-to-cancel: "<red>Click to cancel this order."
+  click-to-edit: "<gray>Click to edit this order."
+  shift-click-sell-all: "<gray>Shift-click to sell all matching items."
+  lore:
+    item: "<white>%item%"
+    amount: "<gray>Amount: <yellow>%amount%x</yellow>"
+    price-each: "<gray>Price: <gold>$%price%</gold> each"
+    total-value: "<gray>Total: <gold>$%total%</gold>"
+    creator: "<gray>Order by: <yellow>%player%</yellow>"
+    remaining: "<gray>Remaining: <yellow>%remaining%x</yellow>"
+    delivered: "<gray>Delivered: <yellow>%delivered%x</yellow>"
+    status: "<gray>Status: %status%"
+    enchantments: "<gray>Enchantments:"
+    enchantment-line: "  <light_purple>%enchantment% %level%</light_purple>"
+
+# ------------------------------------------------------------
+# Admin
+# ------------------------------------------------------------
+admin:
+  order-removed: "<green>Order <yellow>#%id%</yellow> removed by admin."
+  player-orders-removed: "<green>Removed <yellow>%count%</yellow> orders for <yellow>%player%</yellow>."
+  player-not-found: "<red>Player not found."
+  stats-header: "<gradient:#3498db:#2ecc71><bold>UnityOrders Statistics</bold></gradient>"
+  stats-total-orders: "<gray>Total Orders: <yellow>%total%</yellow>"
+  stats-active-orders: "<gray>Active Orders: <yellow>%active%</yellow>"
+  stats-completed-orders: "<gray>Completed Orders: <yellow>%completed%</yellow>"
+  stats-total-volume: "<gray>Total Volume: <gold>$%volume%</gold>"
+  stats-total-deliveries: "<gray>Total Deliveries: <yellow>%deliveries%</yellow>"
+
+# ------------------------------------------------------------
+# Notifications
+# ------------------------------------------------------------
+notifications:
+  order-fulfilled: "<green>Your order for <yellow>%amount%x %item%</yellow> has been fully fulfilled!"
+  order-partially-fulfilled: "<green><yellow>%amount%x %item%</yellow> delivered to your order. <gray>Remaining: <yellow>%remaining%x</yellow>"
+  items-ready: "<green>You have items ready to collect! Use <gold>/order</gold> to collect them."
+  order-expired: "<yellow>Your order for %amount%x %item% has expired."

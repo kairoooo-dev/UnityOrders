@@ -1,0 +1,226 @@
+# ============================================================
+# UnityOrders Configuration
+# Version: ${version}
+# ============================================================
+
+# ------------------------------------------------------------
+# General Settings
+# ------------------------------------------------------------
+settings:
+  # Language file to use (locale files: messages_en.yml, messages_es.yml, etc.)
+  locale: en
+  # Debug mode (verbose console logging)
+  debug: false
+  # Check for updates on startup
+  update-checker: true
+  # BStats metrics
+  metrics: true
+
+# ------------------------------------------------------------
+# Database Configuration
+# ------------------------------------------------------------
+database:
+  # Database type: sqlite, mysql, mariadb, postgresql, mongodb
+  type: sqlite
+
+  # SQLite settings
+  sqlite:
+    file: unityorders.db
+
+  # MySQL / MariaDB / PostgreSQL settings
+  mysql:
+    host: localhost
+    port: 3306
+    database: unityorders
+    username: root
+    password: ""
+    # Connection parameters
+    parameters: useSSL=false&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+
+  # MongoDB settings
+  mongodb:
+    uri: mongodb://localhost:27017
+    database: unityorders
+
+  # Connection pool (HikariCP)
+  pool:
+    maximum-pool-size: 10
+    minimum-idle: 2
+    connection-timeout: 30000
+    idle-timeout: 600000
+    max-lifetime: 1800000
+    keepalive-time: 30000
+
+  # Automatic migrations
+  auto-migrate: true
+
+# ------------------------------------------------------------
+# Order Settings
+# ------------------------------------------------------------
+orders:
+  # Maximum active orders per player
+  max-active-per-player: 10
+  # Minimum price per item
+  min-price-per-item: 0.01
+  # Maximum price per item (0 = unlimited)
+  max-price-per-item: 0
+  # Maximum amount per order (0 = unlimited)
+  max-amount-per-order: 0
+  # Order expiration in hours (0 = never expires)
+  expiration-hours: 168
+  # Allow partial deliveries
+  allow-partial-delivery: true
+
+# ------------------------------------------------------------
+# Tax Settings
+# ------------------------------------------------------------
+tax:
+  # Creation tax percentage (0 = disabled)
+  creation-tax-percent: 0.05
+  # Delivery tax percentage (0 = disabled)
+  delivery-tax-percent: 0.0
+  # Tax goes to server account (empty = removed from economy)
+  tax-account: ""
+
+# ------------------------------------------------------------
+# Enchantment Settings
+# ------------------------------------------------------------
+enchantments:
+  # Maximum enchantments per order (-1 = unlimited)
+  max-enchantments-per-order: 5
+  # Allow enchanted books
+  allow-enchanted-books: true
+  # Allow treasure enchantments (Mending, Frost Walker, etc.)
+  allow-treasure: true
+  # Allow curse enchantments (Curse of Vanishing, Curse of Binding)
+  allow-curses: false
+  # Blacklisted enchantments (by namespaced key, e.g. "minecraft:mending")
+  blacklist: []
+
+# ------------------------------------------------------------
+# GUI Settings
+# ------------------------------------------------------------
+gui:
+  # Items per page in GUIs
+  items-per-page: 45
+  # Animation tick interval (0 = no animations)
+  animation-tick-interval: 10
+  # Show creator head in order items
+  show-creator-head: true
+  # Show item lore with enchantment info
+  show-enchantment-lore: true
+
+  # GUI titles (MiniMessage format)
+  titles:
+    main-menu: "<gradient:#3498db:#2ecc71><bold>UnityOrders</bold></gradient>"
+    your-orders: "<gradient:#9b59b6:#e74c3c><bold>Your Orders</bold></gradient>"
+    create-order: "<gradient:#f39c12:#e67e22><bold>Create Order</bold></gradient>"
+    item-selector: "<gradient:#1abc9c:#16a085><bold>Select Item</bold></gradient>"
+    enchantment-picker: "<gradient:#e74c3c:#c0392b><bold>Enchantments</bold></gradient>"
+    delivery: "<gradient:#2ecc71:#27ae60><bold>Deliver Items</bold></gradient>"
+    delivery-confirm: "<gradient:#f1c40f:#f39c12><bold>Confirm Delivery</bold></gradient>"
+    collect: "<gradient:#3498db:#2980b9><bold>Collect Items</bold></gradient>"
+    search: "<gradient:#1abc9c:#16a085><bold>Search Orders</bold></gradient>"
+    admin: "<gradient:#e74c3c:#c0392b><bold>Admin Panel</bold></gradient>"
+
+  # Button materials
+  buttons:
+    create-order: EMERALD
+    deliver: GOLD_INGOT
+    confirm: LIME_CONCRETE
+    cancel: RED_CONCRETE
+    previous-page: ARROW
+    next-page: ARROW
+    search: COMPASS
+    sort: HOPPER
+    filter: STRUCTURE_VOID
+    sell-all: CHEST
+    collect: ENDER_CHEST
+    back: BARRIER
+    edit-order: WRITABLE_BOOK
+    cancel-order: REDSTONE
+    choose-amount: PAPER
+    choose-price: GOLD_NUGGET
+    choose-item: CHEST
+    info: BOOK
+    stats: BOOKSHELF
+    sort-newest: CLOCK
+    sort-oldest: CLOCK
+    sort-highest-price: DIAMOND
+    sort-lowest-price: GOLD_INGOT
+    sort-most-delivered: EMERALD_BLOCK
+    sort-remaining: HOPPER
+
+# ------------------------------------------------------------
+# Delivery Settings
+# ------------------------------------------------------------
+delivery:
+  # Require confirmation before delivery
+  require-confirmation: true
+  # Maximum items per delivery (0 = unlimited)
+  max-items-per-delivery: 0
+  # Allow Sell All feature
+  allow-sell-all: true
+
+# ------------------------------------------------------------
+# Expiration Settings
+# ------------------------------------------------------------
+expiration:
+  # Check interval in minutes
+  check-interval-minutes: 30
+  # Refund remaining balance on expiration
+  refund-on-expire: true
+  # Notify player on expiration
+  notify-on-expire: true
+
+# ------------------------------------------------------------
+# Item Blacklist
+# ------------------------------------------------------------
+blacklist:
+  # Blacklisted items (by material name)
+  items:
+    - BARRIER
+    - COMMAND_BLOCK
+    - CHAIN_COMMAND_BLOCK
+    - REPEATING_COMMAND_BLOCK
+    - COMMAND_BLOCK_MINECART
+    - STRUCTURE_BLOCK
+    - STRUCTURE_VOID
+    - JIGSAW
+    - LIGHT
+    - SPAWNER
+  # Allow blacklisted items for admins
+  admin-bypass-blacklist: true
+
+# ------------------------------------------------------------
+# Folia Settings
+# ------------------------------------------------------------
+folia:
+  # Detect Folia automatically
+  auto-detect: true
+  # Region scheduler tick delay for async operations
+  region-tick-delay: 1
+
+# ------------------------------------------------------------
+# Hooks (Optional Integrations)
+# ------------------------------------------------------------
+hooks:
+  placeholderapi:
+    enabled: true
+    cache-seconds: 30
+  luckperms:
+    enabled: true
+  vault:
+    enabled: true
+  essentialsx:
+    enabled: true
+  cmi:
+    enabled: true
+  worldguard:
+    enabled: true
+  coreprotect:
+    enabled: true
+  geyser:
+    enabled: true
+    # Show Bedrock-friendly GUI layouts
+    bedrock-layout: true

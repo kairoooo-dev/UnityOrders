@@ -1,0 +1,84 @@
+name: UnityOrders
+version: '${version}'
+main: com.unity.orders.UnityOrders
+api-version: '1.21'
+authors: [kairoooo-dev]
+description: ${description}
+website: https://github.com/kairoooo-dev/UnityOrders
+
+# Folia support
+folia-supported: true
+
+# Soft dependencies for optional integrations
+softdepend:
+  - Vault
+  - PlaceholderAPI
+  - LuckPerms
+  - EssentialsX
+  - CMI
+  - CMILib
+  - ProtocolLib
+  - packetevents
+  - GeyserSpigot
+  - Floodgate
+  - WorldGuard
+  - WorldEdit
+  - CoreProtect
+
+# Commands
+commands:
+  order:
+    description: Open the UnityOrders marketplace
+    usage: /order
+    aliases: [orders, unityorders, uo]
+    permission: unityorders.use
+  unityordersadmin:
+    description: Admin commands for UnityOrders
+    usage: /unityordersadmin <reload|remove|info|stats>
+    aliases: [uoa, uoadmin]
+    permission: unityorders.admin
+
+# Permissions
+permissions:
+  unityorders.*:
+    description: All UnityOrders permissions
+    children:
+      unityorders.use: true
+      unityorders.create: true
+      unityorders.deliver: true
+      unityorders.collect: true
+      unityorders.cancel: true
+      unityorders.edit: true
+      unityorders.sellall: true
+      unityorders.admin: true
+    default: op
+  unityorders.use:
+    description: Open the marketplace GUI
+    default: true
+  unityorders.create:
+    description: Create buy orders
+    default: true
+  unityorders.deliver:
+    description: Fulfill orders
+    default: true
+  unityorders.collect:
+    description: Collect purchased items
+    default: true
+  unityorders.cancel:
+    description: Cancel your own orders
+    default: true
+  unityorders.edit:
+    description: Edit your own orders
+    default: true
+  unityorders.sellall:
+    description: Use Sell All feature
+    default: true
+  unityorders.admin:
+    description: Admin commands
+    default: op
+  unityorders.bypasslimit:
+    description: Bypass active order limits
+    default: op
+  unityorders.bypasstax:
+    description: Bypass creation tax
+    default: op
